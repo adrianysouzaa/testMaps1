@@ -7,6 +7,9 @@ import {Geolocation } from '@ionic-native/geolocation';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { IonicStorageModule } from '@ionic/storage';
+import { DatePipe } from '@angular/common';
+import { RegistrarProvider } from '../providers/registrar/registrar';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,8 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -26,7 +30,9 @@ import { HomePage } from '../pages/home/home';
     StatusBar,
     SplashScreen,
     Geolocation,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DatePipe,
+    RegistrarProvider
   ]
 })
 export class AppModule {}

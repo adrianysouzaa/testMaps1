@@ -47,7 +47,7 @@ export class HomePage {
     });
 
     let content = "<h4> Local Atual </h4>";
-
+    
     this.addInfoWindow(marker, content);
   }
  
@@ -55,9 +55,10 @@ export class HomePage {
     let infoWindow = new google.maps.InfoWindow({
       content: content
     });
-    google.maps.eventaddListener(marker, 'click', () => {
+    google.maps.event.addListener(marker, 'click', () => {
       infoWindow.open(this.map, marker);
     })
+   
   }
 
 }
